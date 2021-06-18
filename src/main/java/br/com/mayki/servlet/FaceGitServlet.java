@@ -2,13 +2,14 @@ package br.com.mayki.servlet;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.net.URISyntaxException;
 import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import br.com.mayki.servico.AtualizaSvg;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,19 +18,18 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/principal")
 public class FaceGitServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
-	private static String urlRequisicao = "https://github-readme-stats.vercel.app/api?username=MaykiSantos&amp;count_private=true&amp;show_icons=true&amp;theme=vue&amp;bg_color=e8eff5&amp;hide_border=true&amp;locale=pt-br";
-	private static File svgFundoAnimado = new File(
-			"C:\\Users\\mayki\\eclipse-workspace-EE\\faceGit\\arquivos\\svg_ModeloFundo.svg");
-	private static File svgFinal = new File(
-			"C:\\Users\\mayki\\eclipse-workspace-EE\\faceGit\\arquivos\\svg_EDITADO_e_ANIMADO.svg");
+	private final long serialVersionUID = 1L;
+	private String caminho = getClass().getResource("../../../../").getPath();
 
-	public FaceGitServlet() throws IOException {
+	private String urlRequisicao = "https://github-readme-stats.vercel.app/api?username=MaykiSantos&amp;count_private=true&amp;show_icons=true&amp;theme=vue&amp;bg_color=e8eff5&amp;hide_border=true&amp;locale=pt-br";
+	private File svgFundoAnimado = new File(caminho + "svg_ModeloFundo.svg");
+	private File svgFinal = new File(caminho + "svg_EDITADO_e_ANIMADO.svg");
+
+	public FaceGitServlet() throws IOException, URISyntaxException {
+
 		// criar threads para rodar sistema que atualiza svg
-		AtualizaSvg atualiza = new AtualizaSvg(FaceGitServlet.urlRequisicao, FaceGitServlet.svgFundoAnimado,
-				FaceGitServlet.svgFinal);
+		AtualizaSvg atualiza = new AtualizaSvg(this.urlRequisicao, this.svgFundoAnimado, this.svgFinal);
 
-		System.out.println("Main executado");
 		ScheduledExecutorService threadAtualizaSvgFinal = Executors.newSingleThreadScheduledExecutor();
 		threadAtualizaSvgFinal.scheduleWithFixedDelay(atualiza, 1, 130, TimeUnit.MINUTES);
 
@@ -38,14 +38,14 @@ public class FaceGitServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Scanner sc = new Scanner(FaceGitServlet.svgFinal);
-		PrintWriter pw = response.getWriter();
+
+		Scanner sc = new Scanner(this.svgFinal);
+		ServletOutputStream pw = response.getOutputStream();
 
 		response.setHeader("content-type", "image/svg+xml; charset=utf-8");
 
-		System.out.println(FaceGitServlet.svgFinal.getAbsolutePath());
-		
 		System.out.println("Imagem entregue para o usuario");
+
 		while (sc.hasNextLine()) {
 			pw.println(sc.nextLine());
 		}

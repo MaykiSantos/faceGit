@@ -13,8 +13,8 @@ import java.util.Scanner;
 public class RequisitaStatus {
 
 	private URL url;
-	private File svgExternoTempFile = new File(
-			"C:\\Users\\mayki\\eclipse-workspace-EE\\faceGit\\arquivos\\svgTemp.svg");
+	private String caminho = getClass().getResource("../../../../").getPath();
+	private File svgExternoTempFile = new File(caminho + "svgTemp.svg");
 
 	public RequisitaStatus(String url) throws MalformedURLException {
 		this.url = new URL(url);

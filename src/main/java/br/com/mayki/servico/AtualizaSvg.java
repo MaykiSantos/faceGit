@@ -13,7 +13,6 @@ public class AtualizaSvg implements Runnable {
 	private File svgFinal;
 
 	public AtualizaSvg(String urlRequisicao, File svgFundoAnimado, File svgFinal) {
-		super();
 		this.urlRequisicao = urlRequisicao;
 		this.svgFundoAnimado = svgFundoAnimado;
 		this.svgFinal = svgFinal;
