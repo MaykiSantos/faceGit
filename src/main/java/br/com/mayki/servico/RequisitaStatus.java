@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -21,8 +22,9 @@ public class RequisitaStatus {
 	}
 
 	public File requisita() throws IOException {
-		// realiza requisição
-		URLConnection conexao = this.url.openConnection();
+		// define parametros da conexão
+		HttpURLConnection conexao = (HttpURLConnection)this.url.openConnection();
+		//HttpURLConnection conexao = new HttpURLConnection(this.url);
 		conexao.setRequestProperty("accept", "image/svg+xml, charset=utf-8");
 		conexao.setRequestProperty("method", "GET");
 
@@ -38,8 +40,7 @@ public class RequisitaStatus {
 	private void editaSvgExterno(InputStream svg) throws IOException {
 		// verifica existencia de arquivo temporario e cria se nescessario
 		if (!this.svgExternoTempFile.exists()) {
-			FileWriter criaArquivoTemp = new FileWriter(
-					"C:\\Users\\mayki\\eclipse-workspace-EE\\faceGit\\arquivos\\svgTemp.svg", false);
+			FileWriter criaArquivoTemp = new FileWriter(this.caminho + "svgTemp.svg", false);
 			criaArquivoTemp.close();
 		}
 
