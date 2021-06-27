@@ -5,7 +5,6 @@
 viewBox="0 0 45155.6 19482.8"
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
-
  <style>
   #reflexo{
     animation: animacaoReflexo 2s infinite linear alternate;
@@ -34,7 +33,6 @@ viewBox="0 0 45155.6 19482.8"
     transform-origin: 20600px 15100px;
     animation: animacaoRelacional .5s infinite linear alternate;
   }
-
   @keyframes animacaoReflexo{
     0%{fill:#ffffff;}
     25%{fill:#ffffffc2;}
@@ -42,39 +40,31 @@ viewBox="0 0 45155.6 19482.8"
     75%{fill:#ffffff4a;}
     100%{fill:#ffffffa6;}
   }
-
   @keyframes animacaoHtml{
     0%{transform: rotate(16deg);}
     100%{transform: rotate(-29deg);}
   }
-
   @keyframes animacaoCsharp{
     0%{transform: rotate(-13deg);}
     100%{transform: rotate(28deg);}
   }
-
   @keyframes animacaoHttps{
     0%{transform: rotate(4deg);}
     100%{transform: rotate(-37deg);}
   }
-
   @keyframes animacaoJava{
     0%{transform: rotate(-19deg);}
     100%{transform: rotate(17deg);}
   }
-
   @keyframes animacaoBancoDeDados{
     0%{transform: rotate(19deg);}
     100%{transform: rotate(-15deg);}
   }
-
   @keyframes animacaoRelacional{
     0%{transform: rotate(-22deg);}
     100%{transform: rotate(8deg);}
   }
-
  </style>
-
  <defs>
   <font id="FontID1" horiz-adv-x="667" font-variant="normal" class="str4" style="fill-rule:nonzero" font-style="normal" font-weight="400">
 	<font-face
@@ -208,13 +198,9 @@ viewBox="0 0 45155.6 19482.8"
    <circle class="fil1 str1" cx="2144.8" cy="670.51" r="352.77"/>
    <circle class="fil1 str1" cx="3164.8" cy="670.51" r="352.77"/>
   </g>
-
-
-  <!--PONTO ADICIONAR SVG EXTERNO -->
   <g id="svg-externo">
-
+    <!--PONTO ADICIONAR SVG EXTERNO -->
   </g>
-
   <g id="bloco-Csharp">
    <path class="fil3 str2" d="M6582.23 6579.06l-95.77 16.89c-27.07,4.76 -52.88,-13.31 -57.66,-40.38 -4.77,-27.06 13.31,-52.88 40.37,-57.65l95.78 -16.89c27.06,-4.77 52.88,13.31 57.65,40.37 4.77,27.06 -13.3,52.88 -40.37,57.66l0 0z"/>
    <path class="fil3 str2" d="M7240.88 8021.55c-27.06,4.77 -52.88,-13.31 -57.65,-40.38l-25.15 -142.62c-4.78,-27.07 13.3,-52.89 40.37,-57.66 27.06,-4.77 52.88,13.31 57.65,40.37l25.15 142.63c4.77,27.06 -13.31,52.88 -40.37,57.65l0 0.01z"/>
@@ -461,4 +447,3 @@ viewBox="0 0 45155.6 19482.8"
  <g style="clip-path:url(#id10)"></g> //não definido
  <g style="clip-path:url(#id11)"></g> //não definido
  <g style="clip-path:url(#id12)"></g> //não definido
-</svg>

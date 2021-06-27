@@ -9,7 +9,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Scanner;
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
 
 public class RequisitaStatus {
 
@@ -21,13 +29,20 @@ public class RequisitaStatus {
 		this.url = new URL(url);
 	}
 
-	public File requisita() throws IOException {
+	public File executa() throws IOException, NoSuchAlgorithmException, KeyManagementException {
 		// define parametros da conexão
-		HttpURLConnection conexao = (HttpURLConnection)this.url.openConnection();
-		//HttpURLConnection conexao = new HttpURLConnection(this.url);
+		
+		SSLContext sslContext = SSLContext.getInstance("SSL");
+		sslContext.init(null, new TrustManager[] {new InvalidCertificateTrustManager()}, new SecureRandom());
+		
+		
+		HttpsURLConnection conexao = (HttpsURLConnection)this.url.openConnection();
+		
 		conexao.setRequestProperty("accept", "image/svg+xml, charset=utf-8");
 		conexao.setRequestProperty("method", "GET");
-
+		conexao.setHostnameVerifier(new HostNameNotValifier());
+		conexao.setSSLSocketFactory(sslContext.getSocketFactory());
+		
 		// recebe resultado
 		InputStream resultado = conexao.getInputStream();
 
