@@ -20,7 +20,8 @@ O "externo.svg" é gerado pelo serviço do [github-readme-stats](https://github.
 O "fundo.svg" é um arquivo local que foi gerado e animado por mim,foi utilizando o corelDraw para montar o vetor, e as animações foram feitas utilizando css.
 
 O programa está hospedado em uma VPS e atende as requisições pelo link https://app.meus-projetos.com:8443/faceGit , o svg entregue pelo link é atualizado em intervalos de 2 horas.
-
+Link origem metricas:
+https://github-readme-stats.vercel.app/api?username=MaykiSantos
 Link Vídeo rápido:
 https://www.youtube.com/watch?v=KnjNoFR_NsM&t=34s&ab_channel=1BestCsharpblog
 
