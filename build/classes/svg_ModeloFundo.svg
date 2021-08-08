@@ -6,63 +6,13 @@ viewBox="0 0 45155.6 19482.8"
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
  <style>
-  #reflexo{
-    animation: animacaoReflexo 2s infinite linear alternate;
-  }
   #bloco-html{
     transform-origin: 5600px 13400px;
     animation: animacaoHtml .5s infinite linear alternate;
   }
-  #bloco-Csharp{
-    transform-origin: 5500px 8200px;
-    animation: animacaoCsharp .5s infinite linear alternate;
-  }
-  #bloco-https{
-    transform-origin: 10800px 3300px;
-    animation: animacaoHttps .5s infinite linear alternate;
-  }
-  #bloco-java{
-    transform-origin: 18000px 4300px;
-    animation: animacaoJava .5s infinite linear alternate;
-  }
-  #bloco-banco-de-dados{
-    transform-origin: 20300px 10100px;
-    animation: animacaoBancoDeDados .5s infinite linear alternate;
-  }
-  #bloco-relacional{
-    transform-origin: 20600px 15100px;
-    animation: animacaoRelacional .5s infinite linear alternate;
-  }
-  @keyframes animacaoReflexo{
-    0%{fill:#ffffff;}
-    25%{fill:#ffffffc2;}
-    50%{fill:#ffffff;}
-    75%{fill:#ffffff4a;}
-    100%{fill:#ffffffa6;}
-  }
   @keyframes animacaoHtml{
     0%{transform: rotate(16deg);}
     100%{transform: rotate(-29deg);}
-  }
-  @keyframes animacaoCsharp{
-    0%{transform: rotate(-13deg);}
-    100%{transform: rotate(28deg);}
-  }
-  @keyframes animacaoHttps{
-    0%{transform: rotate(4deg);}
-    100%{transform: rotate(-37deg);}
-  }
-  @keyframes animacaoJava{
-    0%{transform: rotate(-19deg);}
-    100%{transform: rotate(17deg);}
-  }
-  @keyframes animacaoBancoDeDados{
-    0%{transform: rotate(19deg);}
-    100%{transform: rotate(-15deg);}
-  }
-  @keyframes animacaoRelacional{
-    0%{transform: rotate(-22deg);}
-    100%{transform: rotate(8deg);}
   }
  </style>
  <defs>
