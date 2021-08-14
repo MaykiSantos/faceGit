@@ -1,7 +1,7 @@
 # faceGit
 Programa que disponibiliza a capa do gitHub (Atualizável)
 
-![Anurag's GitHub stats modificado](http://app.meus-projetos.com:8080/faceGit/)
+![Anurag's GitHub stats modificado](http://aplicacao.meus-projetos.com/faceGit/)
 
 ## Descrição
 O faceGit foi um projeto feito para aplicar alguns conhecimentos sobre as bibliotecas:
